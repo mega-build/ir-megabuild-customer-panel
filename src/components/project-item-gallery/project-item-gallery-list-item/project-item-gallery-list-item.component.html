@@ -1,0 +1,21 @@
+<dl
+    *ngIf="projectItemGallery" 
+>
+    <dt>
+        تصویر
+    </dt>
+
+    <dd
+        class="gallery-image"
+        [style.background-image]="'url(' + getImageUrl() + ')'"
+    >
+    </dd>
+    
+    <dt>
+        توضیحات
+    </dt>
+    <dd>
+        {{projectItemGallery.description}}
+    </dd>
+
+</dl>

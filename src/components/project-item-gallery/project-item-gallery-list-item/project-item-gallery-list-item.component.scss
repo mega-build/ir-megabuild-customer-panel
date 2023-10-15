@@ -1,0 +1,19 @@
+dl{
+    display: flex;
+    gap: 16px;
+    align-items: end;
+  }
+  
+  dt {
+    display: none;
+  }
+  
+  dl .bank-title {
+    color: #101828;
+    font-size: 12px;
+  }
+  .gallery-image{
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+  }
