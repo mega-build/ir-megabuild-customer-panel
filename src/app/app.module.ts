@@ -19,30 +19,35 @@ import { LoadingComponent } from 'src/components/share/loading/loading.component
 import { EmptyListComponent } from '../components/share/empty-list/empty-list.component';
 import { LoadingListComponent } from '../components/share/loading-list/loading-list.component';
 import { PriceLabelComponent } from 'src/components/share/price-label/price-label.component';
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    ProjectItemDetailComponent,
-    ProjectDetailComponent,
-    HomeComponent,
-    ProjectItemGalleryPanelComponent,
-    ProjectItemGalleryListComponent,
-    ProjectItemGalleryListItemComponent,
-    PriceLabelComponent,
-    LoadingComponent,
-    EmptyListComponent,
-    LoadingListComponent
+import { CompanyDetailComponent } from 'src/components/company/company-detail/company-detail.component';
+import { ProjectPanelComponent } from '../components/project/project-panel/project-panel.component';
 
 
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule(
+	{
+		declarations: [
+			AppComponent,
+			ProjectItemDetailComponent,
+			ProjectDetailComponent,
+			HomeComponent,
+			ProjectItemGalleryPanelComponent,
+			ProjectItemGalleryListComponent,
+			ProjectItemGalleryListItemComponent,
+			PriceLabelComponent,
+			LoadingComponent,
+			EmptyListComponent,
+			LoadingListComponent,
+			CompanyDetailComponent,
+   ProjectPanelComponent
+		],
+		imports: [
+			BrowserModule,
+			RouterModule,
+			AppRoutingModule,
+			HttpClientModule
+		],
+		providers: [],
+		bootstrap: [AppComponent]
+	}
+)
 export class AppModule { }

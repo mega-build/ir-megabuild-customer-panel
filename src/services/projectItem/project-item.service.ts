@@ -15,9 +15,9 @@ export class ProjectItemService
 		private URL_PROJECT_ITEM_GET: string = `${environment.API_URL}/projectItem`;
 
 		constructor
-				(
-					private httpInterceptorService: HttpInterceptorService,
-				){}
+		(
+			private httpInterceptorService: HttpInterceptorService,
+		){}
 
 		async get
 		(

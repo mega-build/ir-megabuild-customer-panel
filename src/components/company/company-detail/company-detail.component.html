@@ -1,0 +1,16 @@
+<loading
+    *ngIf="isLoading"
+></loading>
+<section
+    *ngIf="!isLoading && company"
+>
+    <dl>
+        <dt>
+            عنوان
+        </dt>
+        <dd>
+            {{company.title}}
+        </dd>
+    </dl>
+</section>
+<router-outlet></router-outlet>

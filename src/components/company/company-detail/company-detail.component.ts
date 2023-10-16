@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProjectItemService } from 'src/services/projectItem/project-item.service';
+import { CompanyService } from 'src/services/company/company.service';
 
 @Component(
 	{
-		selector: 'project-item-detail',
-		templateUrl: './project-item-detail.component.html',
-		styleUrls: ['./project-item-detail.component.scss']
+		selector: 'company-detail',
+		templateUrl: './company-detail.component.html',
+		styleUrls: ['./company-detail.component.scss']
 	}
 )
 
-export class ProjectItemDetailComponent implements OnInit
+	export class CompanyDetailComponent implements OnInit
 	{
-		projectItemId!:string;
+		companyId!:string;
 		isLoading:boolean = false;
-		projectItem!:any;
+		company!:any;
 
 		constructor
 		(
 			private route: ActivatedRoute,
 			private router: Router,
-			private projectItemService:ProjectItemService
+			private companyService:CompanyService
 		){}
 
 		ngOnInit
@@ -28,14 +28,14 @@ export class ProjectItemDetailComponent implements OnInit
 			{
 				this.route.params.subscribe(params => 
 					{
-						let projectItemIdParameter = params['projectItemId'];
+						let companyIdParameter = params['companyId'];
 						if
 						(
-							projectItemIdParameter
+							companyIdParameter
 						)
 							{
-								this.projectItemId =projectItemIdParameter;
-								this.getProjectItem();
+								this.companyId =companyIdParameter;
+								this.getCompany();
 							}
 						else
 							{
@@ -47,7 +47,7 @@ export class ProjectItemDetailComponent implements OnInit
 				
 			}
 
-		async getProjectItem
+		async getCompany
 		(): Promise<void>
 			{
 
@@ -56,13 +56,13 @@ export class ProjectItemDetailComponent implements OnInit
 
 						this.isLoading = true;
 
-						const data = await this.projectItemService
+						const data = await this.companyService
 							.get(
-								this.projectItemId
+								this.companyId
 							)
 
-						console.log(data.contractReview);
-						this.projectItem = data.projectItem;
+						console.log(data.company);
+						this.company = data.company;
 							
 						this.isLoading = false;
 					}
