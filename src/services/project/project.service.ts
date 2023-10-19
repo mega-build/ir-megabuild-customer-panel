@@ -13,6 +13,8 @@ export class ProjectService
 	{
 
 		private URL_PROJECT_GET_ALL_BY_COMPANY: string = `${environment.API_URL}/project/byCompany`;
+		private URL_PROJECT_GET_BY_ID: string = `${environment.API_URL}/project`;
+		
 
 		constructor
 		(
@@ -27,6 +29,22 @@ export class ProjectService
 				let headers: HttpHeaders = new HttpHeaders();
 
 				let url = `${this.URL_PROJECT_GET_ALL_BY_COMPANY}/${companyId}`;
+
+				const result = await this.httpInterceptorService.get(
+					url,
+					headers
+				);
+
+				return result;
+			}
+
+		async get(
+			projectId:string
+		):Promise<any>
+			{
+				let headers: HttpHeaders = new HttpHeaders();
+
+				let url = `${this.URL_PROJECT_GET_BY_ID}/${projectId}`;
 
 				const result = await this.httpInterceptorService.get(
 					url,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ErrorHelper } from 'src/helper/errorHelper';
 import { CompanyService } from 'src/services/company/company.service';
 
 @Component(
@@ -20,7 +21,9 @@ import { CompanyService } from 'src/services/company/company.service';
 		(
 			private route: ActivatedRoute,
 			private router: Router,
-			private companyService:CompanyService
+			private companyService:CompanyService,
+			private errorHelper: ErrorHelper
+
 		){}
 
 		ngOnInit
@@ -72,8 +75,7 @@ import { CompanyService } from 'src/services/company/company.service';
 				)
 					{
 						this.isLoading = false;
-						alert(error)
-						//this.errorHelper.showErrorAsAlert(error);
+						this.errorHelper.showErrorAsAlert(error);
 					}
 			}
 	}

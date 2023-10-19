@@ -21,6 +21,8 @@ import { LoadingListComponent } from '../components/share/loading-list/loading-l
 import { PriceLabelComponent } from 'src/components/share/price-label/price-label.component';
 import { CompanyDetailComponent } from 'src/components/company/company-detail/company-detail.component';
 import { ProjectPanelComponent } from '../components/project/project-panel/project-panel.component';
+import { ProjectListComponent } from '../components/project/project-list/project-list.component';
+import { ProjectListItemComponent } from '../components/project/project-list-item/project-list-item.component';
 
 
 @NgModule(
@@ -38,7 +40,9 @@ import { ProjectPanelComponent } from '../components/project/project-panel/proje
 			EmptyListComponent,
 			LoadingListComponent,
 			CompanyDetailComponent,
-   ProjectPanelComponent
+   ProjectPanelComponent,
+   ProjectListComponent,
+   ProjectListItemComponent
 		],
 		imports: [
 			BrowserModule,

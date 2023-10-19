@@ -1,1 +1,106 @@
-<p>project-detail works!</p>
+<loading-list
+    *ngIf="isLoading"
+></loading-list>
+
+<dl
+    *ngIf="!isLoading && project"
+>
+    <dt>
+        عنوان
+    </dt>
+    <dd>
+        {{project.title}}
+    </dd>
+    <dt>
+        نوع پروژه 
+    </dt>
+    <dd>
+        {{project.projectType.title}}
+    </dd>
+    <dt>
+        آدرسی
+    </dt>
+    <dd>
+        {{project.address}}
+    </dd>
+
+    <dt>
+        واحد ها
+    </dt>
+    <dd>
+        <ul>
+            <li
+                *ngFor = 'let projectItem of project.projectItems'
+            >
+                <dl>
+                    <dt>
+                        زیر بنا
+                    </dt>
+                    <dd>
+                        {{projectItem.buildupArea}}
+                    </dd>
+            
+                    <dt>
+                        بلوک
+                    </dt>
+                    <dd>
+                        {{projectItem.block}}
+                    </dd>
+            
+                    <dt>
+                        طبقه
+                    </dt>
+                    <dd>
+                        {{projectItem.floor}}
+                    </dd>
+            
+                    <dt>
+                        واحد
+                    </dt>
+                    <dd>
+                        {{projectItem.unit}}
+                    </dd>
+            
+                    <dt>
+                        آسانسور
+                    </dt>
+                    <dd>
+                        دارد
+                    </dd>
+            
+                    <dt>
+                        انباری
+                    </dt>
+                    <dd>
+                        دارد
+                    </dd>
+            
+                    <dt>
+                        پارکینگ
+                    </dt>
+                    <dd>
+                        دارد
+                    </dd>
+            
+                    <dt>
+                        توضیحات
+                    </dt>
+                    <dd>
+                        این یک متن نمونه هستش
+                    </dd>
+            
+                    <dt>
+                        تصاویر
+                    </dt>
+                    <dd>
+                        <project-item-gallery-panel
+                            *ngIf="projectItem && projectItem.projectItemGalleryList && projectItem.projectItemGalleryList.length > 0"
+                            [projectItemGalleryList] = 'projectItem.projectItemGalleryList'
+                        ></project-item-gallery-panel>
+                    </dd>
+            
+                </dl>
+            </li>
+        </ul>
+    </dd>
+</dl>
