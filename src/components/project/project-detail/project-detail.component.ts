@@ -17,6 +17,8 @@ export class ProjectDetailComponent implements OnInit
 	isLoading:boolean = false;
 	project!:any;
 
+	blockList!:any[];
+
 	constructor
 	(
 		private route: ActivatedRoute,
@@ -25,6 +27,78 @@ export class ProjectDetailComponent implements OnInit
 		private errorHelper: ErrorHelper
 
 	){}
+
+	groupBy(
+		xs:any[],
+		key:string
+	)
+		{
+			return xs.reduce(function(rv, x)
+				{
+					(rv[x[key]] = rv[x[key]] || []).push(x);
+					return rv;
+				},
+				{}
+			);
+		};
+
+	getBlockList
+	():any[]
+		{
+			const result = this.groupBy(this.project.projectItems,"block");
+			const result2 = Object.entries(result).map(entry =>
+				{
+					return {
+						block:entry[0],
+						projectItems:entry[1]
+					}
+					
+				})
+			console.log(result2);
+			
+			return result2;
+
+		}
+
+	getFloorList
+	(
+		projectItems:any[]
+	):any[]
+		{
+			const result = this.groupBy(projectItems,"floor");
+			const result2 = Object.entries(result).map(entry =>
+				{
+					return {
+						floor:entry[0],
+						projectItems:entry[1]
+					}
+					
+				})
+			console.log(result2);
+			
+			return result2;
+
+		}
+
+	getUnitList
+	(
+		projectItems:any[]
+	):any[]
+		{
+			const result = this.groupBy(projectItems,"unit");
+			const result2 = Object.entries(result).map(entry =>
+				{
+					return {
+						unit:entry[0],
+						projectItems:entry[1]
+					}
+					
+				})
+			console.log(result2);
+			
+			return result2;
+
+		}
 
 	ngOnInit
 	(): void 
@@ -68,6 +142,10 @@ export class ProjectDetailComponent implements OnInit
 					this.project = data.project;
 						
 					this.isLoading = false;
+					console.log('sdf');
+					
+					this.blockList = this.getBlockList();
+					console.log('sdf');
 				}
 			catch
 			(

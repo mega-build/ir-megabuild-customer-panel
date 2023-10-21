@@ -24,7 +24,73 @@
         {{project.address}}
     </dd>
 
-    <dt>
+    <dd>
+        بلوک ها
+    </dd>
+
+    <dd>
+        <ul
+            *ngIf="blockList"
+        >
+            <li
+                *ngFor = 'let blockItem of blockList'
+            >
+                <dl>
+                    <dt>
+                        بلوک
+                    </dt>
+                    <dd>
+                        {{blockItem.block}}
+                    </dd>
+
+                    <dt>
+                        طبقات
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li
+                                *ngFor = 'let blockFloorItem of getFloorList(blockItem.projectItems)'
+                            >
+                                <dl>
+                                    <dt>
+                                        طبقه
+                                    </dt>
+                                    <dd>
+                                        {{blockFloorItem.floor}}
+                                    </dd>
+
+                                    <dt>
+                                        واحد
+                                    </dt>
+                                    <dd>
+                                        <ul>
+                                            <li
+                                                *ngFor = 'let blockFloorUnitItem of getUnitList(blockFloorItem.projectItems)'
+                                            >
+                                                
+                                                <dl>
+                                                    <dt>
+                                                        واحد
+                                                    </dt>
+                                                    <dd>
+                                                        {{blockFloorUnitItem.unit}}
+                                                    </dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                
+            </li>
+        </ul>
+    </dd>
+
+    <!-- <dt>
         واحد ها
     </dt>
     <dd>
@@ -102,5 +168,5 @@
                 </dl>
             </li>
         </ul>
-    </dd>
+    </dd> -->
 </dl>

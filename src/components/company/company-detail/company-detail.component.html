@@ -1,6 +1,7 @@
 <loading
     *ngIf="isLoading"
 ></loading>
+
 <section
     *ngIf="!isLoading && company"
 >
@@ -12,5 +13,14 @@
             {{company.title}}
         </dd>
     </dl>
+
+    <a
+        *ngIf="company"
+        [routerLink]="['/','company',company._id,'project','list']"
+        title="پروژه ها"
+    >
+        پروژه ها
+    </a>
 </section>
+
 <router-outlet></router-outlet>

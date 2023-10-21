@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 
 @Component(
 	{
@@ -8,7 +9,22 @@ import { Component, Input } from '@angular/core';
 	}
 )
 
-export class ProjectListItemComponent
+export class ProjectListItemComponent implements OnInit
 	{
 		@Input() project!: any;
+
+		svgPath!:SafeHtml;
+		constructor(
+			private domSanitizer: DomSanitizer
+		){}
+		ngOnInit(): void {
+			
+
+			this.svgPath = this.domSanitizer.bypassSecurityTrustHtml(
+				this.project.map
+			);
+		}
+
+		
+		
 	}

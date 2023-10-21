@@ -17,4 +17,21 @@
     <dd>
         {{project.address}}
     </dd>
+
+    <dt>
+        نقشه
+    </dt>
+    <dd
+        *ngIf="project.map"
+    >
+        <div [innerHTML] = "svgPath"></div>
+    </dd>
 </dl>
+
+<a
+    *ngIf="project"
+    [routerLink]="['..','detail', project._id]"
+    title="واحد ها"
+>
+    واحد ها
+</a>
