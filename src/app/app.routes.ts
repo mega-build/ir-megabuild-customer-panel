@@ -33,12 +33,4 @@ export const routes: Routes = [
                 },
             ]
     },
-    {
-        path:'project',
-        component: ProjectDetailComponent,
-    },
-    {
-        path:'projectItem/:projectItemId',
-        component: ProjectItemDetailComponent,
-    },
 ]
