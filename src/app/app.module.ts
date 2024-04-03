@@ -23,6 +23,26 @@ import { CompanyDetailComponent } from 'src/components/company/company-detail/co
 import { ProjectPanelComponent } from '../components/project/project-panel/project-panel.component';
 import { ProjectListComponent } from '../components/project/project-list/project-list.component';
 import { ProjectListItemComponent } from '../components/project/project-list-item/project-list-item.component';
+import { ProjectPlanComponent } from '../components/project/project-plan/project-plan.component';
+import { BlockPanelComponent } from '../components/block/block-panel/block-panel.component';
+import { SvgViewerComponent } from '../components/share/svg-viewer/svg-viewer.component';
+import { FloorPanelComponent } from '../components/floor/floor-panel/floor-panel.component';
+import { BlockListComponent } from '../components/block/block-list/block-list.component';
+import { BlockListItemComponent } from '../components/block/block-list-item/block-list-item.component';
+import { BlockPlanComponent } from 'src/components/block/block-plan/block-plan.component';
+import { FloorPlanComponent } from '../components/floor/floor-plan/floor-plan.component';
+import { BlockDetailComponent } from '../components/block/block-detail/block-detail.component';
+import { FloorListComponent } from '../components/floor/floor-list/floor-list.component';
+import { FloorListItemComponent } from '../components/floor/floor-list-item/floor-list-item.component';
+import { FloorDetailComponent } from '../components/floor/floor-detail/floor-detail.component';
+import { UnitPanelComponent } from '../components/unit/unit-panel/unit-panel.component';
+import { UnitListComponent } from '../components/unit/unit-list/unit-list.component';
+import { UnitListItemComponent } from '../components/unit/unit-list-item/unit-list-item.component';
+import { SelectBlockComponent } from 'src/components/block/select-block/select-block.component';
+import { SelectFloorComponent } from '../components/floor/select-floor/select-floor.component';
+import { SelectUnitComponent } from '../components/unit/select-unit/select-unit.component';
+
+
 
 
 @NgModule(
@@ -40,9 +60,27 @@ import { ProjectListItemComponent } from '../components/project/project-list-ite
 			EmptyListComponent,
 			LoadingListComponent,
 			CompanyDetailComponent,
-   ProjectPanelComponent,
-   ProjectListComponent,
-   ProjectListItemComponent
+			ProjectPanelComponent,
+			ProjectListComponent,
+			ProjectListItemComponent,
+			ProjectPlanComponent,
+			BlockPanelComponent,
+			SvgViewerComponent,
+			FloorPanelComponent,
+			BlockListComponent,
+			BlockListItemComponent,
+			BlockPlanComponent,
+			FloorPlanComponent,
+			BlockDetailComponent,
+			FloorListComponent,
+			FloorListItemComponent,
+			FloorDetailComponent,
+			UnitPanelComponent,
+			UnitListComponent,
+			UnitListItemComponent,
+			SelectBlockComponent,
+   SelectFloorComponent,
+   SelectUnitComponent
 		],
 		imports: [
 			BrowserModule,

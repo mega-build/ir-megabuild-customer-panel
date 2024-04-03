@@ -1,0 +1,16 @@
+<dl>
+    <dt>
+        عنوان
+    </dt>
+    
+    <dd>
+        {{floor.title}}
+    </dd>
+</dl>
+<a
+    *ngIf="floor"
+    [routerLink]="['floor', 'detail',floor._id]"
+    title="مشاهده جزئیات"
+>
+    مشاهده جزئیات
+</a>

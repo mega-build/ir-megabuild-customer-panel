@@ -1,0 +1,7 @@
+<loading
+    *ngIf="isLoading"
+></loading>
+<floor-list
+    *ngIf="!isLoading && floorList && floorList.length > 0"
+    [floorList]="floorList"
+></floor-list>

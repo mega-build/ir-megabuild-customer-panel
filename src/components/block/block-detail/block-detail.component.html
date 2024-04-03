@@ -1,0 +1,17 @@
+<loading-list
+    *ngIf="isLoading"
+></loading-list>
+
+<!-- <block-plan></block-plan> -->
+
+<svg-viewer
+    *ngIf="svgContent"
+    [svgContnet]="svgContent"
+></svg-viewer>
+
+<floor-panel
+    *ngIf="blockId"
+    [blockId]="blockId"
+></floor-panel>
+
+<router-outlet></router-outlet>

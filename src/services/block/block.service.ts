@@ -9,12 +9,13 @@ import { environment } from 'src/environments/environment.development';
 	}
 )
 
-export class ProjectService
+export class BlockService
 	{
 
-		private URL_PROJECT_GET_ALL_BY_COMPANY: string = `${environment.API_URL}/project/byCompany`;
-		private URL_PROJECT_GET_BY_ID: string = `${environment.API_URL}/project`;
-		private URL_BLOCK_SVG_GET_BY_PROJECT_ID: string = `${environment.API_URL}/block/svg/byProject`;
+		private URL_BLOCK_GET_ALL_BY_PROJECT: string = `${environment.API_URL}/block/byProject`;
+		private URL_BLOCK_GET_BY_ID: string = `${environment.API_URL}/block`;
+		private URL_FLOOR_SVG_GET_BY_BLOCK_ID: string = `${environment.API_URL}/floor/svg/byBlock`;
+		
 		
 
 		constructor
@@ -22,14 +23,14 @@ export class ProjectService
 			private httpInterceptorService: HttpInterceptorService
 		){}
 
-		async getAllProjectByCompanyId
+		async getAllBlockByProjectId
 		(
-			companyId: string
+			projectId: string
 		): Promise<any>
 			{
 				let headers: HttpHeaders = new HttpHeaders();
 
-				let url = `${this.URL_PROJECT_GET_ALL_BY_COMPANY}/${companyId}`;
+				let url = `${this.URL_BLOCK_GET_ALL_BY_PROJECT}/${projectId}`;
 
 				const result = await this.httpInterceptorService.get(
 					url,
@@ -40,12 +41,12 @@ export class ProjectService
 			}
 
 		async get(
-			projectId:string
+			blockId:string
 		):Promise<any>
 			{
 				let headers: HttpHeaders = new HttpHeaders();
 
-				let url = `${this.URL_PROJECT_GET_BY_ID}/${projectId}`;
+				let url = `${this.URL_BLOCK_GET_BY_ID}/${blockId}`;
 
 				const result = await this.httpInterceptorService.get(
 					url,
@@ -61,7 +62,7 @@ export class ProjectService
 			{
 				let headers: HttpHeaders = new HttpHeaders();
 
-				let url = `${this.URL_BLOCK_SVG_GET_BY_PROJECT_ID}/${projectId}`;
+				let url = `${this.URL_FLOOR_SVG_GET_BY_BLOCK_ID}/${projectId}`;
 
 				const result = await this.httpInterceptorService.get(
 					url,
@@ -70,4 +71,6 @@ export class ProjectService
 
 				return result;
 			}
+
+		
 	}

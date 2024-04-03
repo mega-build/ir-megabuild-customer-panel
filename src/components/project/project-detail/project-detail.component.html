@@ -2,7 +2,28 @@
     *ngIf="isLoading"
 ></loading-list>
 
-<dl
+<!-- <project-plan></project-plan> -->
+
+<!-- dosent show links  -->
+
+<svg-viewer
+    *ngIf="svgContent"
+    [svgContnet]="svgContent"
+></svg-viewer>
+
+
+
+<block-panel
+    *ngIf="projectId"
+    [projectId]="projectId"
+></block-panel>
+
+
+<router-outlet></router-outlet>
+
+
+
+<!-- <dl
     *ngIf="!isLoading && project"
 >
     <dt>
@@ -76,6 +97,13 @@
                                                         {{blockFloorUnitItem.unit}}
                                                     </dd>
                                                 </dl>
+                                                <a
+                                                    *ngIf="project"
+                                                    [routerLink]="['projectItem', 'detail',blockFloorUnitItem.projectItems[0]._id]"
+                                                    title="مشاهده جزئیات"
+                                                >
+                                                    مشاهده جزئیات
+                                                </a>
                                             </li>
                                         </ul>
                                     </dd>
@@ -90,7 +118,9 @@
         </ul>
     </dd>
 
-    <!-- <dt>
+
+
+     <dt>
         واحد ها
     </dt>
     <dd>
@@ -168,5 +198,5 @@
                 </dl>
             </li>
         </ul>
-    </dd> -->
-</dl>
+    </dd> 
+</dl> -->

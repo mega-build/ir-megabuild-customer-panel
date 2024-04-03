@@ -1,0 +1,24 @@
+<dl>
+    <dt>
+        عنوان
+    </dt>
+    <dd>
+        {{block.title}}
+    </dd>
+
+    <!-- <dt>
+        نقشه
+    </dt>
+    <dd>
+        <svg-viewer
+            [svgContnet]="block.plan"
+        ></svg-viewer>
+    </dd> -->
+</dl>
+<a
+    *ngIf="block"
+    [routerLink]="['block', 'detail',block._id]"
+    title="مشاهده جزئیات"
+>
+    مشاهده جزئیات
+</a>
